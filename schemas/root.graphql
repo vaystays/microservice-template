@@ -1,3 +1,22 @@
+scalar UUID
+scalar Decimal
+scalar Email
+scalar JSON
+
+
+
+enum ResultKind {
+  OK
+  WARNING
+  ERROR
+}
+
+
+type BasicResponse {
+  type: ResultKind,
+  payload: JSON
+}
+
 type Query {
-  hello(name: String): String
+  health: BasicResponse
 }

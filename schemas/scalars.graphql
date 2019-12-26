@@ -1,5 +1,4 @@
-enum ResultKind {
-  OK
-  WARNING
-  ERROR
-}
+scalar UUID
+scalar Decimal
+scalar Email
+scalar JSON

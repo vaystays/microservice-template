@@ -1,12 +1,19 @@
 {
-  "name": "Untitled GraphQL Schema",
-  "schemaPath": "schema.graphql",
+  "name": "MicroService Template",
+  "schemaPath": "schemas/root.graphql",
   "extensions": {
     "endpoints": {
-      "Default GraphQL Endpoint": {
+      "dev": {
+        "url": "http://localhost:4000",
+        "headers": {
+          "Authentication": "Bearer "
+        },
+        "introspect": false
+      },
+      "prod": {
         "url": "http://localhost:8080/graphql",
         "headers": {
-          "user-agent": "JS GraphQL"
+          "Authentication": "Bearer "
         },
         "introspect": false
       }

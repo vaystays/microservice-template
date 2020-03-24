@@ -39,9 +39,11 @@
     "graphql-type-uuid": "^0.2.0",
     "graphql-yoga": "1.18.3",
     "ts-node-dev": "^1.0.0-pre.44",
-    "typescript": "2.9.2"
+    "typescript": "2.9.2",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@types/winston": "^2.4.4",
     "graphql-cli": "2.17.0",
     "npm-run-all": "4.1.5",
     "ts-node": "6.2.0"

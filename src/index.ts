@@ -3,6 +3,7 @@ import * as Decimal from 'graphql-type-decimal'
 import * as Email from 'graphql-type-email'
 import * as UUID from 'graphql-type-uuid'
 import * as JSON from 'graphql-type-json'
+import logger from './utilities/logger'
 
 const resolvers = {
   Decimal,
@@ -32,4 +33,4 @@ const server = new GraphQLServer({
   resolvers
 })
 
-server.start(() => console.log('Server is running on http://localhost:4000'))
+server.start(() => logger.info('Server is running on http://localhost:4000'))

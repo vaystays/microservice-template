@@ -1,5 +1,6 @@
 import * as winston from 'winston'
 import { Papertrail } from 'winston-papertrail'
+const ElasticSearch = require('winston-elasticsearch')
 
 const logger = winston.createLogger({
   level: 'info',
@@ -16,7 +17,9 @@ const logger = winston.createLogger({
   ],
 })
 
+let indexPrefix = `ms-dev-log`
 if (process.env.NODE_ENV === 'production') {
+  indexPrefix = `ms-log`
   logger.add(
     new Papertrail({
       host: 'logs.papertrailapp.com',
@@ -24,5 +27,16 @@ if (process.env.NODE_ENV === 'production') {
     }),
   )
 }
+
+logger.add(
+  new ElasticSearch({
+    level: 'info',
+    messageType: 'log',
+    indexPrefix,
+    clientOpts: {
+      node: 'https://search-direct-logs-ee6xzcyio6c5qy5wdjiwz7mo7q.us-west-1.es.amazonaws.com',
+    },
+  }),
+)
 
 export default logger

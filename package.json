@@ -7,7 +7,9 @@
     "start": "npx ts-node ./src",
     "start:dev": "npx ts-node-dev ./src",
     "start:playground": "npx npm-run-all --parallel start:dev playground",
-    "playground": "npx graphql playground"
+    "playground": "npx graphql playground",
+    "test": "npx jest",
+    "test:watch": "npx jest --watch"
   },
   "keywords": [
     "graphql",
@@ -29,23 +31,45 @@
       "name": "Mike McFerrin",
       "email": "mike@directsoftware.com",
       "url": "https://github.com/McFerrin"
+    },
+    {
+      "name": "Jake Bills",
+      "email": "jake@directsoftware.com",
+      "url": "https://github.com/jakebills1"
+    },
+    {
+      "name": "Zach Kirby",
+      "email": "zach@directsoftware.com",
+      "url": "https://github.com/kirbynator"
     }
   ],
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^13.9.3",
     "graphql-type-decimal": "^1.0.0",
     "graphql-type-email": "^0.1.0",
     "graphql-type-json": "^0.3.1",
     "graphql-type-uuid": "^0.2.0",
     "graphql-yoga": "1.18.3",
     "ts-node-dev": "^1.0.0-pre.44",
-    "typescript": "2.9.2",
-    "winston": "^3.2.1"
+    "typescript": "^3.8.3",
+    "winston": "^3.2.1",
+    "winston-papertrail": "^1.0.5"
   },
   "devDependencies": {
+    "@types/jest": "^25.1.4",
     "@types/winston": "^2.4.4",
     "graphql-cli": "2.17.0",
+    "jest": "^25.1.0",
     "npm-run-all": "4.1.5",
-    "ts-node": "6.2.0"
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.8.1"
+  },
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/typescript@3.1.40"
+    },
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
   }
 }
